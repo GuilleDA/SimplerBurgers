@@ -27,16 +27,12 @@ const CategoryListItem = (props) => {
   return (
     <CategoryListItemWrapper>
     <div>
-    {props.type}
-    <br/>
+    <h1>{props.type}</h1>
     <LimiterWrapper
         src={limiter_icon}
     />
-    
     </div>
-
     {getProducts()}
-    <br/>
     </CategoryListItemWrapper>
   );
 };

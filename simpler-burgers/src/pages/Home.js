@@ -72,7 +72,9 @@ const FilterWrapper = styled(TextField)`
         background: #FFFFFF;
         box-sizing: border-box;
         border-radius: 30px;
-          
+        .MuiInputBase-root{
+            height: 40px;
+        }
     }
 `;
 
