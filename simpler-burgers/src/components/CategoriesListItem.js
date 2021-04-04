@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import { Container, Typography, TextField, Button, InputBase } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import { COMBO_TYPES } from "../data/Dummy";
 import { DRINK_TYPES } from "../data/Dummy";
 import limiter_icon from '../assets/limiter.svg';
@@ -10,7 +10,7 @@ import { routeTo } from '../util/RoutesHelper';
 
 
 
-const CategoryListItem = (props) => {
+const CategoriesListItem = (props) => {
     const history = useHistory();
 
     const handleProductItemClick = () => {
@@ -31,13 +31,13 @@ const CategoryListItem = (props) => {
 
   return (
     <CategoryListItemWrapper>
-    <div>
-    <CategoryWrapper>{props.type}</CategoryWrapper>
-    <LimiterWrapper
-        src={limiter_icon}
-    />
-    </div>
-    {getProducts()}
+        <div>
+        <CategoryWrapper>{props.type}</CategoryWrapper>
+        <LimiterWrapper
+            src={limiter_icon}
+        />
+        </div>
+        {getProducts()}
     </CategoryListItemWrapper>
   );
 };
@@ -74,4 +74,4 @@ const CategoryWrapper = styled(Typography)`
     }
 `;
 
-export default CategoryListItem;
+export default CategoriesListItem;

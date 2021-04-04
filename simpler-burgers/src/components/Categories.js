@@ -2,15 +2,15 @@ import * as React from "react";
 import styled from "styled-components";
 import { Container, Typography, TextField, Button, InputBase } from "@material-ui/core";
 import { CATEGORIES } from "../data/Dummy";
-import CategoryListItem from "../components/CategoryListItem";
+import CategoriesListItem from "./CategoriesListItem";
 
-const Category = () => {
+const Categories = () => {
 
 
   return (
     <CategoryWrapper>
         <TitleWrapper>
-            {CATEGORIES.map(name => <CategoryListItem type={name}/>)}
+            {CATEGORIES.map(name => <CategoriesListItem type={name}/>)}
         </TitleWrapper>
     </CategoryWrapper>
   );
@@ -32,4 +32,4 @@ const TitleWrapper = styled(Typography)`
     }
 `;
 
-export default Category;
+export default Categories;

@@ -5,7 +5,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import IconButton from '@material-ui/core/IconButton';
 import  CATEGORIES  from "../data/Dummy";
-import Category from "../components/Category";
+import Categories from "../components/Categories";
 
 const Home = () => {
 
@@ -27,7 +27,7 @@ const Home = () => {
             }}> 
             </FilterWrapper>
         </HeaderWrapper>
-        <Category />
+        <Categories />
     </HomeWrapper>
   );
 };
