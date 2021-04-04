@@ -29,13 +29,6 @@ const TitleWrapper = styled(Typography)`
         left: 34px;
         top: 20px;
 
-        font-family: Sanchez;
-font-style: normal;
-font-weight: normal;
-font-size: 48px;
-line-height: 61px;
-
-color: #000000;
     }
 `;
 

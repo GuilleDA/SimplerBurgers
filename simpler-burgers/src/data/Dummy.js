@@ -1,3 +1,3 @@
-export const CATEGORIES = ['Combos','Bebidas']
+export const CATEGORIES = ['Combos','Drinks']
 export const COMBO_TYPES = ['1','2']
-export const BEBIDA_TYPES = ['1']
+export const DRINK_TYPES = ['1']

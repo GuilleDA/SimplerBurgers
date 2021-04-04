@@ -13,10 +13,10 @@ const Home = () => {
   return (
     <HomeWrapper>
         <HeaderWrapper>
-            <TitleWrapper>Sucursal 0001</TitleWrapper>
+            <TitleWrapper>Store 0001</TitleWrapper>
             <FilterWrapper 
                 variant="outlined"
-                placeholder="Buscar" 
+                placeholder="Search" 
                 InputProps={{
                     startAdornment:(
                                     <InputAdornment position="start">

@@ -2,23 +2,28 @@ import * as React from "react";
 import styled from "styled-components";
 import { Container, Typography, TextField, Button, InputBase } from "@material-ui/core";
 import { COMBO_TYPES } from "../data/Dummy";
-import { BEBIDA_TYPES } from "../data/Dummy";
+import { DRINK_TYPES } from "../data/Dummy";
 import limiter_icon from '../assets/limiter.svg';
 import product_icon from '../assets/product.svg';
-import { ContactPhoneTwoTone } from "@material-ui/icons";
-
+import { useHistory } from "react-router";
+import { routeTo } from '../util/RoutesHelper';
 
 
 
 const CategoryListItem = (props) => {
+    const history = useHistory();
+
+    const handleProductItemClick = () => {
+        routeTo.product(history, )
+    }
 
     const getProducts = () => {
         let content = []
         if(props.type === "Combos"){
-            COMBO_TYPES.map(x => {content.push(<ProductDummy src={product_icon}/>)
+            COMBO_TYPES.map(x => {content.push(<ProductDummy onClick={handleProductItemClick} src={product_icon}/>)
                                          content.push(<br/>)});
         }else{
-            BEBIDA_TYPES.map(x => {content.push(<ProductDummy src={product_icon}/>)
+            DRINK_TYPES.map(x => {content.push(<ProductDummy onClick={handleProductItemClick} src={product_icon}/>)
                                           content.push(<br/>)});
         }
         return <div>{content}</div>;
@@ -27,7 +32,7 @@ const CategoryListItem = (props) => {
   return (
     <CategoryListItemWrapper>
     <div>
-    <h1>{props.type}</h1>
+    <CategoryWrapper>{props.type}</CategoryWrapper>
     <LimiterWrapper
         src={limiter_icon}
     />
@@ -38,6 +43,7 @@ const CategoryListItem = (props) => {
 };
 
 const CategoryListItemWrapper = styled.div`    width: 100%;`;
+
 const LimiterWrapper = styled.img`
     &&{
         position:relative
@@ -49,6 +55,23 @@ const LimiterWrapper = styled.img`
           
     }
 `;
-const ProductDummy = styled.img`    `;
+
+const ProductDummy = styled.img`
+&&{
+    cursor:pointer;
+
+}`;
+
+const CategoryWrapper = styled(Typography)`
+    &&{
+        margin-bottom: -20px;
+        font-family: Sanchez;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 61px;
+        color: #000000;
+    }
+`;
 
 export default CategoryListItem;

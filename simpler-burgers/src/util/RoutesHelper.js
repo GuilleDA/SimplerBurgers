@@ -1,5 +1,6 @@
 export const routes = {
     home: '/',
+    product: '/product'
 }
 
 const createRouteWithoutParam = (pathName) => (history) =>
@@ -9,5 +10,6 @@ const createRouteWithoutParam = (pathName) => (history) =>
 
 
 export const routeTo = {
-    home: createRouteWithoutParam(routes.home)
+    home: createRouteWithoutParam(routes.home),
+    product: createRouteWithoutParam(routes.product)
 }
