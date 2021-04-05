@@ -4,21 +4,21 @@ import { Typography } from "@material-ui/core";
 import product_photo from '../assets/productBig.png';
 import unit_icon from '../assets/unit.svg';
 import option_icon from '../assets/option.svg';
-import button from '../assets/button.svg';
+import edit_button from '../assets/editButton.svg';
 import back_button from '../assets/back.svg';
 import { DESCRIPTION, PRODUCT_OPTIONS, PRICE} from "../data/Dummy";
 import { useHistory } from "react-router";
 import { routeTo } from '../util/RoutesHelper';
 
-const Product = () => {
+const EditProduct = () => {
     const history = useHistory();
 
-    const handleAddToCartClick = () => {
-        routeTo.homeWithCart(history, )
+    const handleEditClick = () => {
+        routeTo.cart(history, )
     }
 
     const handleBackClick = () => {
-        routeTo.home(history, )
+        routeTo.cart(history, )
     }
 
     const getOptions = (text) => {
@@ -49,7 +49,7 @@ const Product = () => {
         <ProductOptionsWrapper>
             {PRODUCT_OPTIONS.map(type => getOptions(type))}
         </ProductOptionsWrapper>
-        <AddToCartButton src={button} onClick={handleAddToCartClick}/>
+        <EditButton src={edit_button} onClick={handleEditClick}/>
     </ProductWrapper>
     
   );
@@ -116,11 +116,10 @@ const ProductPrice = styled(Typography)`
     }
 `
 
-const AddToCartButton = styled.img`
+const EditButton = styled.img`
     padding-top: 5%;
     padding-left: 4%;
     cursor:pointer;
-    width: 90%;
 `
 
 const HeaderWrapper = styled.div`
@@ -130,4 +129,4 @@ const HeaderWrapper = styled.div`
 const BackButton = styled.img`
     cursor:pointer;
 `
-export default Product;
+export default EditProduct;

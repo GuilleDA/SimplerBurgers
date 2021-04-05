@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import  CATEGORIES  from "../data/Dummy";
 import Categories from "../components/Categories";
 import mycart_button from '../assets/cartButton.svg';
+import hamburger_icon from '../assets/hamburger.svg'
 import { useHistory } from "react-router";
 import { routeTo } from '../util/RoutesHelper';
 
@@ -20,6 +21,7 @@ const HomeWithCart = () => {
   return (
     <HomeWrapper>
         <HeaderWrapper>
+            <HamburgerIcon src={hamburger_icon}/>
             <TitleWrapper>Store 0001</TitleWrapper>
             <FilterWrapper 
                 variant="outlined"
@@ -67,7 +69,7 @@ const TitleWrapper = styled(Typography)`
         font-weight: normal;
         font-size: 48px;
         line-height: 61px;
-
+        margin-top: -60px;
         color: #FFFFFF;
     }
 `;
@@ -94,5 +96,9 @@ const CartButton = styled.img`
     padding-left: 4%;
     padding-top: 8%;
 `;
+
+const HamburgerIcon = styled.img`
+    padding-left: 2%;
+`
 
 export default HomeWithCart;

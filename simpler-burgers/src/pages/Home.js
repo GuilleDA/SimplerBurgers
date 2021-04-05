@@ -1,11 +1,11 @@
 import * as React from "react";
 import styled from "styled-components";
-import { Container, Typography, TextField, Button, InputBase } from "@material-ui/core";
+import { Typography, TextField } from "@material-ui/core";
 import SearchIcon from '@material-ui/icons/Search';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import IconButton from '@material-ui/core/IconButton';
-import  CATEGORIES  from "../data/Dummy";
 import Categories from "../components/Categories";
+import hamburger_icon from '../assets/hamburger.svg'
 
 const Home = () => {
 
@@ -13,6 +13,7 @@ const Home = () => {
   return (
     <HomeWrapper>
         <HeaderWrapper>
+            <HamburgerIcon src={hamburger_icon}/>
             <TitleWrapper>Store 0001</TitleWrapper>
             <FilterWrapper 
                 variant="outlined"
@@ -33,10 +34,10 @@ const Home = () => {
 };
 
 const HomeWrapper = styled.div`    
-width: 100%;`;
+    width: 100%;
+`;
 
 const HeaderWrapper = styled.div`
-
     width: 100%;
     height: 194px;
     left: 0px;
@@ -45,8 +46,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const TitleWrapper = styled(Typography)`
-    &&{
-        
+    &&{ 
         width: 80%;
         height: 47px;
         padding-left: 34px;
@@ -57,14 +57,13 @@ const TitleWrapper = styled(Typography)`
         font-weight: normal;
         font-size: 48px;
         line-height: 61px;
-
+        margin-top: -60px;
         color: #FFFFFF;
     }
 `;
 
 const FilterWrapper = styled(TextField)`
     &&{
-        
         width: 90%;
         height: 40px;
         left: 18px;
@@ -76,5 +75,9 @@ const FilterWrapper = styled(TextField)`
         }
     }
 `;
+
+const HamburgerIcon = styled.img`
+    padding-left: 2%;
+`
 
 export default Home;
