@@ -51,7 +51,6 @@ const EditProduct = () => {
         </ProductOptionsWrapper>
         <EditButton src={edit_button} onClick={handleEditClick}/>
     </ProductWrapper>
-    
   );
 };
 
@@ -120,6 +119,7 @@ const EditButton = styled.img`
     padding-top: 5%;
     padding-left: 4%;
     cursor:pointer;
+    width: 90%;
 `
 
 const HeaderWrapper = styled.div`

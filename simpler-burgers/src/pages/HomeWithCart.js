@@ -58,7 +58,6 @@ const HeaderWrapper = styled.div`
 
 const TitleWrapper = styled(Typography)`
     &&{
-        
         width: 80%;
         height: 47px;
         padding-left: 34px;
@@ -75,8 +74,7 @@ const TitleWrapper = styled(Typography)`
 `;
 
 const FilterWrapper = styled(TextField)`
-    &&{
-        
+    &&{       
         width: 90%;
         height: 40px;
         left: 18px;
@@ -93,8 +91,19 @@ const CartWrapper = styled.div`
 `;
 
 const CartButton = styled.img`
-    padding-left: 4%;
-    padding-top: 8%;
+    background: #FAFAFA;
+    border-top: 1px solid rgba(0, 0, 0, 0.10);
+    width: 100%;
+    bottom: 0px;
+    position: fixed;
+    padding-right: 1%;
+    padding-left: 1%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
 `;
 
 const HamburgerIcon = styled.img`
