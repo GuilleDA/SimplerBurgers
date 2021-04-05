@@ -5,6 +5,9 @@ import product_photo from '../assets/productBig.png';
 import unit_icon from '../assets/unit.svg';
 import option_icon from '../assets/option.svg';
 import button from '../assets/button.svg';
+import continue_button from '../assets/continue.svg';
+import add_something from '../assets/addSomething.svg';
+import product_cart from '../assets/productCart.svg';
 import { DESCRIPTION, PRODUCT_OPTIONS, PRICE} from "../data/Dummy";
 import { useHistory } from "react-router";
 import { routeTo } from '../util/RoutesHelper';
@@ -16,32 +19,17 @@ const Product = () => {
         routeTo.homeWithCart(history, )
     }
 
-    const getOptions = (text) => {
-        let content = []
-        if(text === "Units"){
-            content.push(<OptionDummy src={unit_icon}/>);
-            content.push(<br/>);
-        }else{
-            content.push(<OptionDummy src={option_icon}/>);
-            content.push(<br/>);
-        }
-        return <div>{content}</div>;
-    }
-
   return (
     <ProductWrapper>
         <ProductPhotoWrapper src={product_photo}/>
-        <ProductInfoWrapper>
-            <ProductTitle>
-                Product
-            </ProductTitle>
-            <ProductDescription>{DESCRIPTION}</ProductDescription>
-            <ProductPrice>{PRICE}</ProductPrice>
-        </ProductInfoWrapper>
         <ProductOptionsWrapper>
-            {PRODUCT_OPTIONS.map(type => getOptions(type))}
+            <CartProduct src={product_cart}/>
+            <br/>
+            <AddSomething src={add_something}/>
         </ProductOptionsWrapper>
-        <AddToCartButton src={button} onClick={handleAddToCartClick}/>
+        <ContinueWrapper>
+            <ContinueButton src={continue_button}/>
+        </ContinueWrapper>
     </ProductWrapper>
     
   );
@@ -87,7 +75,8 @@ const ProductDescription = styled(Typography)`
 const ProductOptionsWrapper = styled.div`
     background-color: grey;    
     width: 100%;
-    height: 300px;
+    padding-bottom: 100%;
+    margin-top:-10px;
 `
 const OptionDummy = styled.img`
     width: 80%;
@@ -109,9 +98,42 @@ const ProductPrice = styled(Typography)`
 `
 
 const AddToCartButton = styled.img`
-    padding-top: 5%;
+    padding-top: 110%;
     padding-left: 4%;
     cursor:pointer;
+    width:80%;
+    
+`
+const ContinueWrapper = styled.div`
+background: #FAFAFA;
+border-top: 1px solid rgba(0, 0, 0, 0.10);
+width: 100%;
+bottom: 0px;
+position: fixed;
+padding-right: 1%;
+padding-left: 1%;
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+height: 15vh;
+`;
+
+const ContinueButton = styled.img`
 `
 
+const AddSomething = styled.img`
+width: 80%;
+height: 78px;
+padding-left: 35px;
+padding-top: 10px;
+`
+
+const CartProduct = styled.img`
+width: 80%;
+    height: 78px;
+    padding-left: 35px;
+    padding-top: 10px;
+`
 export default Product;

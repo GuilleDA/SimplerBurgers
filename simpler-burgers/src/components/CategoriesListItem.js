@@ -46,8 +46,8 @@ const CategoryListItemWrapper = styled.div`    width: 100%;`;
 
 const LimiterWrapper = styled.img`
     &&{
-        position:relative
-        width: 272px;
+       
+        width: 90%;
         height: 6px;
         bottom: 20px;
         background: #000000;
@@ -59,7 +59,9 @@ const LimiterWrapper = styled.img`
 const ProductDummy = styled.img`
 &&{
     cursor:pointer;
-
+    padding-top:10px;
+    padding-left:20px;
+    width: 80%;
 }`;
 
 const CategoryWrapper = styled(Typography)`

@@ -6,9 +6,16 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import IconButton from '@material-ui/core/IconButton';
 import  CATEGORIES  from "../data/Dummy";
 import Categories from "../components/Categories";
+import mycart_button from '../assets/cartButton.svg';
+import { useHistory } from "react-router";
+import { routeTo } from '../util/RoutesHelper';
 
-const Home = () => {
+const HomeWithCart = () => {
+    const history = useHistory();
 
+    const handleCartClick = () => {
+        routeTo.cart(history, )
+    }
 
   return (
     <HomeWrapper>
@@ -28,6 +35,9 @@ const Home = () => {
             </FilterWrapper>
         </HeaderWrapper>
         <Categories />
+        <CartWrapper>
+            <CartButton src={mycart_button} onClick={handleCartClick}/>
+        </CartWrapper>
     </HomeWrapper>
   );
 };
@@ -77,4 +87,12 @@ const FilterWrapper = styled(TextField)`
     }
 `;
 
-export default Home;
+const CartWrapper = styled.div`
+`;
+
+const CartButton = styled.img`
+    padding-left: 4%;
+    padding-top: 8%;
+`;
+
+export default HomeWithCart;

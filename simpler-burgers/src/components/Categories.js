@@ -17,17 +17,14 @@ const Categories = () => {
 };
 
 const CategoryWrapper = styled.div`   
-position:relative;
+
 width: 100%;`;
 
 
 const TitleWrapper = styled(Typography)`
     &&{
-        position: relative;
-        width: 90%;
-        height: 47px;
-        left: 34px;
-        top: 20px;
+        padding-left:20px;
+        
 
     }
 `;
